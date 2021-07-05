@@ -1,0 +1,172 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 0;
+    max-width: 114rem;
+    margin: auto;
+    position: relative;
+
+    @include respond(tab-port) {
+        width: 80%;
+    }
+    
+    &__left {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        
+        .logo_box {
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            
+            .logo_name {
+                font-family: "Playfair Display", sans-serif;
+                font-weight: 500;
+                color: $color-primary;
+                font-size: 2.8rem;
+                letter-spacing: .1rem;
+
+                @include respond(tab-port) {
+                    font-size: 4rem;
+                }
+            }
+
+            p {
+                font-family: "Playfair Display", sans-serif;
+                font-weight: 700;
+                color: $color-grey-dark;
+                letter-spacing: .3rem;
+
+                @include respond(tab-port) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .navigation {
+            
+            ul {
+                display: flex;
+                justify-content: center;
+                list-style-type: none;
+                margin-left: 5rem;
+
+                li {
+                    padding: 1.6rem 0;
+
+                    &:not(:last-of-type) {
+                        margin-right: 2rem;
+                    }
+
+                    a {
+                        font-size: 1.5rem;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        letter-spacing: .2rem;
+                        color: $color-nav;
+                        transition: .3s all;
+
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+
+            @include respond(tab-port) {
+                position: absolute;
+                top: 12rem;
+                left: -5rem;
+                z-index: 1000;
+                width: 106%;
+                
+                ul {
+                    display: block;
+                    background-color: $color-main;
+                    text-align: center;
+
+                    li {
+                        padding: 2.5rem;
+                        width: 100%;
+
+                        &:not(:last-of-type) {
+                            border-bottom: 1px solid $color-grey-light;
+                        }
+
+                        a {
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+    }
+    
+    // t o g g l e r
+    @include respond(tab-port) {
+        .links {
+            height: 0;
+            overflow: hidden;
+        }
+        .show_links {
+            animation: .5s opaque ease-in-out;
+            overflow: visible;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        p {
+            font-size: 1.6rem;
+            padding-right: 2rem;
+            border-right: 2px solid #E4E8F2;
+
+            .call {
+                color: $color-primary;
+            }
+
+            @include respond(tab-port) {
+                display: none;
+            }
+        }
+
+        &__socials {
+            padding-left: 2rem;
+
+            img {
+                width: 3rem;
+            }
+
+            @include respond(tab-port) {
+
+                img {
+                    width: 4rem;
+                    
+                    &:not(:last-of-type) {
+                        margin-right: .5rem;
+                    }
+                }
+            }
+        }
+
+        .menu__icon {
+            display: none;
+
+            @include respond(tab-port) {
+                display: inline-block;
+                margin-left: 4rem;
+                width: 4rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
